@@ -13,10 +13,20 @@ function App() {
       <SideMenu />
       <Header />
       <Routes>
-        <Route path="/reposlist" element={<ReposList />}></Route>
-        <Route path="/followers" element={<FollowersList />}></Route>
-        <Route path="/subscription" element={<Subscription />}></Route>
-        <Route path="/users" element={<UserInfo />}></Route>
+        <Route path="/" element={<ReposList />}></Route>
+        <Route
+          path="/users/:accountName/reposlist"
+          element={<ReposList />}
+        ></Route>
+        <Route
+          path="/users/:accountName/followers"
+          element={<FollowersList />}
+        ></Route>
+        <Route
+          path="/users/:accountName/subscription"
+          element={<Subscription />}
+        ></Route>
+        <Route path="/users/:accountName" element={<UserInfo />}></Route>
       </Routes>
     </>
   );

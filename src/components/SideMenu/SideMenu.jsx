@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./SideMenu.module.css";
 import UserInfo from "../UserInfo/UserInfo";
 import logo from "../../github-brands.svg";
-import { Link } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { brands, faGithub } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 let SideMenu = () => {
+  const params = 1;
   return (
     <>
       {/* <FontAwesomeIcon icon={faGithub} /> */}
@@ -25,22 +26,25 @@ let SideMenu = () => {
           <div>john.doe@gmail.com</div>
         </div>
 
-        <Link to="/reposlist" className={classes.menuItem}>
+        <NavLink to={`/users/${params}/reposlist`} className={classes.menuItem}>
           <FontAwesomeIcon icon={faCodeBranch} />
           <div className={classes.category}>REPOSITORIES</div>
-        </Link>
-        <Link to="/followers" className={classes.menuItem}>
+        </NavLink>
+        <NavLink to={`/users/${params}/followers`} className={classes.menuItem}>
           <FontAwesomeIcon icon={faUsers} />
           <div className={classes.category}>FOLLOWERS</div>
-        </Link>
-        <Link to="/subscription" className={classes.menuItem}>
+        </NavLink>
+        <NavLink
+          to={`/users/${params}/subscription`}
+          className={classes.menuItem}
+        >
           <FontAwesomeIcon icon={faLink} />
           <div className={classes.category}>SUBSCRIPTION</div>
-        </Link>
-        <Link to="/users" className={classes.menuItem}>
+        </NavLink>
+        <NavLink to={`/users/${params}`} className={classes.menuItem}>
           <FontAwesomeIcon icon={faUser} />
           <div className={classes.category}>ABOUT</div>
-        </Link>
+        </NavLink>
       </div>
     </>
   );
