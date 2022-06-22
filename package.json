@@ -1,6 +1,7 @@
 {
   "name": "git-cat",
   "version": "0.1.0",
+  "homepage": "https://yurasmoliy.github.io/GitCat",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
