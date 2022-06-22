@@ -1,0 +1,37 @@
+.sidemenu {
+  width: 22%;
+  height: 800px;
+  float: left;
+  border-radius: 0 15px 0 0;
+  color: white;
+  background-color: #4c56c0;
+}
+.menuItem {
+  display: block;
+  margin-left: 40px;
+  margin-top: 40px;
+  padding: 5px 0px 5px 10px;
+  color: white;
+  text-decoration: none;
+}
+.menuItem:hover {
+  color: #4c56c0;
+  background-color: white;
+  border-radius: 10px 0 0 10px;
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  margin-top: 50px;
+  width: 90px;
+}
+.userShortInfo {
+  width: 100%;
+  text-align: center;
+}
+.category {
+  display: inline;
+  margin-left: 15px;
+}
