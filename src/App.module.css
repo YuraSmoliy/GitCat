@@ -1,0 +1,7 @@
+.appContent {
+  float: left;
+  margin-top: 30px;
+  width: 70%;
+  /* width: 100vw; */
+  height: 100vh;
+}

@@ -2,8 +2,8 @@
   display: flex;
   list-style: none;
   margin-left: 30px;
-  margin-bottom: 30px;
-  font-size: 16px;
+  font-size: 10px;
+  border-bottom: 1px dotted;
 }
 
 .repoItem {
