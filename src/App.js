@@ -6,10 +6,11 @@ import UserInfo from "./components/UserInfo/UserInfo";
 import FollowersList from "./components/FollowersList/FollowersList";
 import Subscription from "./components/Subscription/Subscription";
 import classes from "./App.module.css";
+import UserInfoData from "./components/UserContext/UserContext";
 
 function App() {
   return (
-    <>
+    <UserInfoData>
       <SideMenu />
       <Header />
       <div className={classes.appContent}>
@@ -30,7 +31,7 @@ function App() {
           <Route path="/users/:accountName" element={<UserInfo />}></Route>
         </Routes>
       </div>
-    </>
+    </UserInfoData>
   );
 }
 

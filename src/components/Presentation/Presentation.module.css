@@ -1,0 +1,32 @@
+.elementsContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 3vw;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+.elementsLine {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px dotted;
+}
+
+.header {
+  font-size: 16px;
+  border-bottom: 1px none;
+  margin-bottom: 15px;
+}
+.element {
+  width: 40%;
+  margin-left: 3vw;
+}
+
+.element:first-child {
+  width: 15%;
+}
+.element:last-child {
+  width: 5%;
+  text-align: center;
+}

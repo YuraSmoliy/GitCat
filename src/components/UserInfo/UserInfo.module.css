@@ -1,0 +1,22 @@
+.userInfoContainer {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  margin-left: 3vw;
+  line-height: 2.5;
+  font-weight: bold;
+}
+.avatarUrl {
+  width: 20vw;
+}
+.avatarUrl img {
+  border-radius: 50%;
+  width: 100%;
+}
+.userInfo {
+  width: 30vw;
+  margin-left: 3vw;
+}
+.accountDetails {
+  color: rgb(186, 149, 223);
+}
