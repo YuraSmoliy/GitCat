@@ -8,18 +8,13 @@ let Header = () => {
   let context = useContext(UserInfoContext);
   const [events, setEvents] = useState(0);
 
-  console.log(context.received_events_url);
-
   useEffect(() => {
     let setData = async () => {
       let userEvents = await getUserEvents(context.received_events_url);
-      console.log(userEvents);
       setEvents(userEvents);
     };
     setData();
   }, [context.received_events_url]);
-
-  console.log(events);
 
   return (
     <div className={classes.header}>
