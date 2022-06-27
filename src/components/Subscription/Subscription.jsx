@@ -7,7 +7,7 @@ import classes from "./Subscription.module.css";
 
 let Subscription = () => {
   const [subscriptions, setSubscription] = useState(null);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState("");
   let [filteredList, setFilteredList] = useState(null);
 
   let searchData = (value) => {
@@ -36,7 +36,7 @@ let Subscription = () => {
   return (
     <>
       <div className={classes.header}>
-        <div className={classes.title}>Followers:</div>
+        <div className={classes.title}>Subscription:</div>
         <div className={classes.filter}>
           <Filter value={search} search={searchData}></Filter>
         </div>

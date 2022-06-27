@@ -7,7 +7,7 @@ import classes from "./Followers.module.css";
 
 let Followers = () => {
   const [followers, setFollowers] = useState(null);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState("");
   let [filteredList, setFilteredList] = useState(null);
 
   let searchData = (value) => {
@@ -18,7 +18,7 @@ let Followers = () => {
   let filter = (value) => {
     setFilteredList(
       followers.filter((follower) => {
-        if (follower.name.startsWith(value)) {
+        if (follower.name && follower.name.startsWith(value)) {
           return follower;
         }
       })

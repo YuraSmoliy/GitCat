@@ -9,7 +9,7 @@ let Filter = (props) => {
       <input
         value={props.value}
         type="text"
-        placeholder="search value"
+        placeholder="search value by name"
         onChange={search}
       />
     </div>

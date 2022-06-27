@@ -7,7 +7,7 @@ import classes from "./ReposList.module.css";
 
 let ReposList = () => {
   let [data, setUserdata] = useState(null);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState("");
   let [filteredList, setFilteredList] = useState(null);
 
   let searchData = (value) => {
@@ -36,7 +36,7 @@ let ReposList = () => {
   return (
     <>
       <div className={classes.header}>
-        <div className={classes.title}>Followers:</div>
+        <div className={classes.title}>Repos list:</div>
         <div className={classes.filter}>
           <Filter value={search} search={searchData}></Filter>
         </div>

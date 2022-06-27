@@ -1,12 +1,17 @@
 import React from "react";
-import LoadingView from "../LoadingView/LoadingView";
 import classes from "./Presentation.module.css";
+
+let keyCount = 0;
+let getKey = () => {
+  return ++keyCount;
+};
 
 let Presentation = (props) => {
   let headersElements = props.headers.map((header) => (
-    <div className={classes.element}>{header.toUpperCase()}</div>
+    <div key={getKey()} className={classes.element}>
+      {header.toUpperCase()}
+    </div>
   ));
-
   let elementslist = [];
 
   if (props.elements) {
@@ -14,11 +19,15 @@ let Presentation = (props) => {
       let elementsLine = [];
       for (let varible of props.headers) {
         elementsLine.push(
-          <div className={classes.element}>{String(element[varible])}</div>
+          <div key={getKey()} className={classes.element}>
+            {String(element[varible])}
+          </div>
         );
       }
       elementslist.push(
-        <div className={classes.elementsLine}>{elementsLine}</div>
+        <div key={getKey()} className={classes.elementsLine}>
+          {elementsLine}
+        </div>
       );
     }
   }
