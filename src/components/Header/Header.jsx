@@ -12,11 +12,12 @@ let Header = () => {
 
   useEffect(() => {
     let setData = async () => {
-      let userEvents = await getUserEvents(context.received_events);
+      let userEvents = await getUserEvents(context.received_events_url);
+      console.log(userEvents);
       setEvents(userEvents);
     };
     setData();
-  }, [setEvents]);
+  }, [context.received_events_url]);
 
   console.log(events);
 
@@ -28,12 +29,19 @@ let Header = () => {
         <img src={logo} alt="github img" />
       </div>
       <div className={classes.data}>
-        <div>
-          <div>Received events</div> <div>{events ? events.length : 0}</div>
-          <div>Followers</div>
-          <div>{context.followers}</div>
-          <div>Repos</div>
-          <div>{context.public_repos}</div>
+        <div className={classes.dataContainer}>
+          <div className={classes.dataLine}>
+            <div className={classes.key}>Received events</div>
+            <div className={classes.value}>{events ? events.length : 0}</div>
+          </div>
+          <div className={classes.dataLine}>
+            <div className={classes.key}>Followers</div>
+            <div className={classes.value}>{context.followers}</div>
+          </div>
+          <div className={classes.dataLine}>
+            <div className={classes.key}>Repos</div>
+            <div className={classes.value}>{context.public_repos}</div>
+          </div>
         </div>
       </div>
     </div>

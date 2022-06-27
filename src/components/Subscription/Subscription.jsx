@@ -14,7 +14,7 @@ let Subscription = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {subscriptions ? (
         <Presentation
           elements={subscriptions}
@@ -23,7 +23,7 @@ let Subscription = () => {
       ) : (
         <LoadingView />
       )}
-    </div>
+    </>
   );
 };
 

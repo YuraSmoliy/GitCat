@@ -36,3 +36,17 @@
   background-color: #cba4ef;
   padding: 20px 0 0 20px;
 }
+.dataContainer {
+  width: 100%;
+}
+.dataLine {
+  width: 100%;
+  display: flex;
+}
+.key {
+  width: 50%;
+}
+.value {
+  width: 30%;
+  text-align: right;
+}

@@ -1,15 +1,1 @@
-.repo {
-  display: flex;
-  list-style: none;
-  margin-left: 30px;
-  margin-bottom: 30px;
-  font-size: 16px;
-}
 
-.repoItem {
-  margin-left: 30px;
-  width: 160px;
-}
-.description {
-  width: 400px;
-}
