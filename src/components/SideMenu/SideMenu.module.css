@@ -1,7 +1,6 @@
 .sidemenu {
   width: 22%;
-  height: 800px;
-  float: left;
+  height: 100%;
   border-radius: 0 15px 0 0;
   color: white;
   background-color: #4c56c0;
@@ -25,7 +24,8 @@
 }
 .logo {
   margin-top: 50px;
-  width: 90px;
+  width: 6vw;
+  border-radius: 50%;
 }
 .userShortInfo {
   width: 100%;

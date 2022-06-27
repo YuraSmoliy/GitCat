@@ -2,19 +2,35 @@
   display: block;
   float: left;
   display: flex;
-  width: 78%;
+  width: 100%;
+  font-size: 1.25rem;
+  color: white;
 }
 .welcome {
-  width: 250px;
-  height: 120px;
+  position: relative;
+  width: 18vw;
+  height: 8vw;
+  font-family: cursive;
   margin-left: 40px;
   border-radius: 10px;
   padding: 20px 0 0 20px;
-  background: rgb(115, 236, 127);
+  background: rgb(90, 183, 99);
+  letter-spacing: 0.12rem;
+}
+.welcome img {
+  position: absolute;
+  top: 0%;
+  right: 5%;
+  width: 40%;
+  height: 100%;
+}
+.welcome p {
+  font-family: Ink Free;
+  letter-spacing: 0.31rem;
 }
 .data {
-  width: 250px;
-  height: 120px;
+  width: 18vw;
+  height: 8vw;
   margin-left: 40px;
   border-radius: 10px;
   background-color: #cba4ef;

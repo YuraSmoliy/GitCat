@@ -12,7 +12,6 @@ let UserInfoData = (props) => {
     };
     setData();
   }, []);
-  console.log(userInfo);
 
   return (
     <UserInfoContext.Provider value={userInfo}>

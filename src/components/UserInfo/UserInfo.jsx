@@ -6,7 +6,7 @@ import LoadingView from "../LoadingView/LoadingView";
 let UserInfo = (props) => {
   let context = useContext(UserInfoContext);
   let login = context.login || null;
-  console.log(login);
+
   return (
     <>
       {login ? (

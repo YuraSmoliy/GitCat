@@ -2,8 +2,14 @@ export const getUserData = async (userName) => {
   let userData = await fetch(`https://api.github.com/users/${userName}`)
     .then((res) => res.json())
     .catch(() => {});
-  console.log(userData);
   return userData;
+};
+
+export const getUserEvents = async (received_events_url) => {
+  let userEventsData = await fetch(received_events_url)
+    .then((res) => res.json())
+    .catch(() => {});
+  return userEventsData;
 };
 
 export const getUserRepositories = async (userName) => {

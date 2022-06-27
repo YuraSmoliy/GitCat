@@ -11,25 +11,29 @@ import UserInfoData from "./components/UserContext/UserContext";
 function App() {
   return (
     <UserInfoData>
-      <SideMenu />
-      <Header />
-      <div className={classes.appContent}>
-        <Routes>
-          <Route path="/" element={<ReposList />}></Route>
-          <Route
-            path="/users/:accountName/reposlist"
-            element={<ReposList />}
-          ></Route>
-          <Route
-            path="/users/:accountName/followers"
-            element={<FollowersList />}
-          ></Route>
-          <Route
-            path="/users/:accountName/subscription"
-            element={<Subscription />}
-          ></Route>
-          <Route path="/users/:accountName" element={<UserInfo />}></Route>
-        </Routes>
+      <div className={classes.app}>
+        <SideMenu />
+        <div className={classes.mainSection}>
+          <Header />
+          <div className={classes.appContent}>
+            <Routes>
+              <Route path="/" element={<ReposList />}></Route>
+              <Route
+                path="/users/:accountName/reposlist"
+                element={<ReposList />}
+              ></Route>
+              <Route
+                path="/users/:accountName/followers"
+                element={<FollowersList />}
+              ></Route>
+              <Route
+                path="/users/:accountName/subscription"
+                element={<Subscription />}
+              ></Route>
+              <Route path="/users/:accountName" element={<UserInfo />}></Route>
+            </Routes>
+          </div>
+        </div>
       </div>
     </UserInfoData>
   );
