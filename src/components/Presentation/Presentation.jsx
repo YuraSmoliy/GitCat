@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Presentation.module.css";
+import Filter from "../Filter/FIlter";
 
 let keyCount = 0;
 let getKey = () => {
@@ -9,7 +10,7 @@ let getKey = () => {
 let Presentation = (props) => {
   let headersElements = props.headers.map((header) => (
     <div key={getKey()} className={classes.element}>
-      {header.toUpperCase()}
+      {header}
     </div>
   ));
   let elementslist = [];
@@ -34,10 +35,20 @@ let Presentation = (props) => {
 
   return (
     <div className={classes.elementsContainer}>
-      <div className={[classes.elementsLine, classes.header].join(" ")}>
+      <div className={classes.header}>
+        <div>
+          <div className={classes.title}>{props.section}</div>
+          <div className={classes.overview}>Overview of GitHub</div>
+        </div>
+        <div className={classes.filter}>
+          <Filter value={props.serValue} search={props.setSearchData}></Filter>
+        </div>
+      </div>
+
+      <div className={[classes.elementsLine, classes.tableHeader].join(" ")}>
         {headersElements}
       </div>
-      <div>{elementslist}</div>
+      <div className={classes.body}>{elementslist}</div>
     </div>
   );
 };

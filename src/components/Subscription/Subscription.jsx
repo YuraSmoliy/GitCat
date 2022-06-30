@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getUserSubscriptons } from "../../services/fetchUser";
 import Presentation from "../Presentation/Presentation";
 import LoadingView from "../LoadingView/LoadingView";
-import Filter from "../Filter/FIlter";
-import classes from "./Subscription.module.css";
 
 let Subscription = () => {
   const [subscriptions, setSubscription] = useState(null);
@@ -35,16 +33,13 @@ let Subscription = () => {
 
   return (
     <>
-      <div className={classes.header}>
-        <div className={classes.title}>Subscription:</div>
-        <div className={classes.filter}>
-          <Filter value={search} search={searchData}></Filter>
-        </div>
-      </div>
       {subscriptions ? (
         <Presentation
           elements={filteredList ? filteredList : subscriptions}
           headers={["name", "description", "html_url", "private"]}
+          serchValue={search}
+          setSearchData={searchData}
+          section={"Subscriptions:"}
         />
       ) : (
         <LoadingView />

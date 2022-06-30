@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getUserFollowers } from "../../services/fetchUser";
 import LoadingView from "../LoadingView/LoadingView";
 import Presentation from "../Presentation/Presentation";
-import Filter from "../Filter/FIlter";
-import classes from "./Followers.module.css";
 
 let Followers = () => {
   const [followers, setFollowers] = useState(null);
@@ -34,22 +32,19 @@ let Followers = () => {
   }, []);
 
   return (
-    <div>
-      <div className={classes.header}>
-        <div className={classes.title}>Followers:</div>
-        <div className={classes.filter}>
-          <Filter value={search} search={searchData}></Filter>
-        </div>
-      </div>
+    <>
       {followers ? (
         <Presentation
           elements={filteredList ? filteredList : followers}
           headers={["id", "name", "detail", "type"]}
+          serchValue={search}
+          setSearchData={searchData}
+          section={"Followers:"}
         />
       ) : (
         <LoadingView />
       )}
-    </div>
+    </>
   );
 };
 

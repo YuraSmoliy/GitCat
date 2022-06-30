@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getUserRepositories } from "../../services/fetchUser";
 import Presentation from "../Presentation/Presentation";
 import LoadingView from "../LoadingView/LoadingView";
-import Filter from "../Filter/FIlter";
-import classes from "./ReposList.module.css";
 
 let ReposList = () => {
   let [data, setUserdata] = useState(null);
@@ -35,16 +33,13 @@ let ReposList = () => {
 
   return (
     <>
-      <div className={classes.header}>
-        <div className={classes.title}>Repos list:</div>
-        <div className={classes.filter}>
-          <Filter value={search} search={searchData}></Filter>
-        </div>
-      </div>
       {data ? (
         <Presentation
           elements={filteredList ? filteredList : data}
           headers={["owner", "name", "description", "forks", "private"]}
+          serchValue={search}
+          setSearchData={searchData}
+          section={"Repositories:"}
         />
       ) : (
         <LoadingView />
