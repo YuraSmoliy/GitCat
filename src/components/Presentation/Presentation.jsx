@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Presentation.module.css";
 import Filter from "../Filter/FIlter";
+import List from "./List/List";
 
 let keyCount = 0;
 let getKey = () => {
@@ -8,11 +9,17 @@ let getKey = () => {
 };
 
 let Presentation = (props) => {
-  let headersElements = props.headers.map((header) => (
-    <div key={getKey()} className={classes.element}>
-      {header}
-    </div>
-  ));
+  let headersElements = React.useCallback(
+    props.headers.map(
+      (header) => (
+        <div key={header} className={classes.element}>
+          {header}
+        </div>
+      ),
+      []
+    )
+  );
+
   let elementslist = [];
 
   if (props.elements) {
@@ -20,13 +27,21 @@ let Presentation = (props) => {
       let elementsLine = [];
       for (let varible of props.headers) {
         elementsLine.push(
-          <div key={getKey()} className={classes.element}>
+          <div
+            key={"" + getKey() + element[varible]}
+            className={classes.element}
+          >
             {String(element[varible])}
           </div>
         );
       }
+      let elementKey = "";
+      for (let value in element) {
+        elementKey += element[value];
+      }
+
       elementslist.push(
-        <div key={getKey()} className={classes.elementsLine}>
+        <div key={elementKey} className={classes.elementsLine}>
           {elementsLine}
         </div>
       );
@@ -45,10 +60,7 @@ let Presentation = (props) => {
         </div>
       </div>
 
-      <div className={[classes.elementsLine, classes.tableHeader].join(" ")}>
-        {headersElements}
-      </div>
-      <div className={classes.body}>{elementslist}</div>
+      <List header={headersElements} elements={elementslist} />
     </div>
   );
 };

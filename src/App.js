@@ -17,20 +17,27 @@ function App() {
           <Header />
           <div className={classes.appContent}>
             <Routes>
-              <Route path="/" element={<ReposList />}></Route>
+              <Route exact path="/" element={<ReposList />}></Route>
               <Route
+                exact
                 path="/users/:accountName/reposlist"
                 element={<ReposList />}
               ></Route>
               <Route
+                exact
                 path="/users/:accountName/followers"
                 element={<FollowersList />}
               ></Route>
               <Route
+                exact
                 path="/users/:accountName/subscription"
                 element={<Subscription />}
               ></Route>
-              <Route path="/users/:accountName" element={<UserInfo />}></Route>
+              <Route
+                exact
+                path="/users/:accountName"
+                element={<UserInfo />}
+              ></Route>
             </Routes>
           </div>
         </div>

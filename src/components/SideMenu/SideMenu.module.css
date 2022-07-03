@@ -19,6 +19,18 @@
   background-color: white;
   transition: 0.3s ease-out;
 }
+.menuItemActove {
+  display: block;
+  margin-left: 40px;
+  margin-top: 40px;
+  padding: 5px 0px 5px 10px;
+  border-radius: 10px 0 0 10px;
+  text-decoration: none;
+  color: #4c56c0;
+  background-color: white;
+  transition: 0.3s ease-out;
+}
+
 .logoContainer {
   display: flex;
   justify-content: center;

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import classes from "./SideMenu.module.css";
 import { UserInfoContext } from "../UserContext/UserContext";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCodeBranch,
@@ -9,9 +9,29 @@ import {
   faUsers,
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
+import { memo } from "react";
 
-let SideMenu = () => {
-  let context = useContext(UserInfoContext);
+const SideMenu = () => {
+  const context = useContext(UserInfoContext);
+
+  const respositoriesRoutPath = `/users/${context.login}/reposlist`;
+  const followersRoutPath = `/users/${context.login}/followers`;
+  const subscriptionRoutPath = `/users/${context.login}/subscription`;
+  const userRoutPath = `/users/${context.login}/`;
+
+  const createLink = (to, icon, category) => {
+    return (
+      <NavLink
+        to={to}
+        className={({ isActive }) =>
+          isActive ? [classes.menuItemActove] : classes.menuItem
+        }
+      >
+        <FontAwesomeIcon icon={icon} />
+        <div className={classes.category}>{category}</div>
+      </NavLink>
+    );
+  };
 
   return (
     <>
@@ -24,35 +44,14 @@ let SideMenu = () => {
           <div>{context.email ? context.email : "An email wasn't added"}</div>
         </div>
         <div className={classes.navigationContainer}>
-          <NavLink
-            to={`/users/${context.login}/reposlist`}
-            className={classes.menuItem}
-          >
-            <FontAwesomeIcon icon={faCodeBranch} />
-            <div className={classes.category}>REPOSITORIES</div>
-          </NavLink>
-          <NavLink
-            to={`/users/${context.login}/followers`}
-            className={classes.menuItem}
-          >
-            <FontAwesomeIcon icon={faUsers} />
-            <div className={classes.category}>FOLLOWERS</div>
-          </NavLink>
-          <NavLink
-            to={`/users/${context.login}/subscription`}
-            className={classes.menuItem}
-          >
-            <FontAwesomeIcon icon={faLink} />
-            <div className={classes.category}>SUBSCRIPTION</div>
-          </NavLink>
-          <NavLink to={`/users/${context.login}`} className={classes.menuItem}>
-            <FontAwesomeIcon icon={faUser} />
-            <div className={classes.category}>ABOUT</div>
-          </NavLink>
+          {createLink(respositoriesRoutPath, faCodeBranch, "REPOSITORIES")}
+          {createLink(followersRoutPath, faUsers, "FOLLOWERS")}
+          {createLink(subscriptionRoutPath, faLink, "SUBSCRIPTION")}
+          {createLink(userRoutPath, faUser, "ABOUT")}
         </div>
       </div>
     </>
   );
 };
 
-export default SideMenu;
+export default memo(SideMenu);

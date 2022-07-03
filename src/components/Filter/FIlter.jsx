@@ -1,4 +1,5 @@
 import Rect from "react";
+import { memo } from "react";
 
 let Filter = (props) => {
   let search = (event) => {
@@ -16,4 +17,4 @@ let Filter = (props) => {
   );
 };
 
-export default Filter;
+export default memo(Filter);
