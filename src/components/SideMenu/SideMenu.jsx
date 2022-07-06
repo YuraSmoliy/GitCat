@@ -9,7 +9,6 @@ import {
   faUsers,
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
-import { memo } from "react";
 
 const SideMenu = () => {
   const context = useContext(UserInfoContext);
@@ -54,4 +53,4 @@ const SideMenu = () => {
   );
 };
 
-export default memo(SideMenu);
+export default SideMenu;

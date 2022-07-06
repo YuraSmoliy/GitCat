@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import { getUserSubscriptons } from "../../services/fetchUser";
 import Presentation from "../Presentation/Presentation";
 import LoadingView from "../LoadingView/LoadingView";
-import { memo } from "react";
 
 let Subscription = () => {
   const [subscriptions, setSubscription] = useState(null);
   const [search, setSearch] = useState("");
   let [filteredList, setFilteredList] = useState(null);
 
-  let searchData = React.useCallback((value) => {
+  let searchData = (value) => {
     setSearch(value);
     filter(value);
-  }, []);
+  };
 
   let filter = (value) => {
     setFilteredList(
@@ -49,4 +48,4 @@ let Subscription = () => {
   );
 };
 
-export default memo(Subscription);
+export default Subscription;

@@ -17,4 +17,4 @@ let Filter = (props) => {
   );
 };
 
-export default memo(Filter);
+export default Filter;
