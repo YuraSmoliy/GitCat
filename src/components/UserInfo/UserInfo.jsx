@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { UserInfoContext } from "../UserContext/UserContext";
 import classes from "./UserInfo.module.css";
 import LoadingView from "../LoadingView/LoadingView";
@@ -32,4 +32,4 @@ let UserInfo = (props) => {
   );
 };
 
-export default UserInfo;
+export default memo(UserInfo);

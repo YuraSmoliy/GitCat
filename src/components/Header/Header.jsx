@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, memo } from "react";
 import { UserInfoContext } from "../UserContext/UserContext";
 import { getUserEvents } from "../../services/fetchUser";
 import classes from "./Header.module.css";
@@ -43,4 +43,4 @@ let Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

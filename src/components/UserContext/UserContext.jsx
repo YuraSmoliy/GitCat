@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, memo } from "react";
 import { useEffect, useState } from "react";
 import { getUserData } from "../../services/fetchUser";
 
@@ -20,4 +20,4 @@ let UserInfoData = (props) => {
   );
 };
 
-export default UserInfoData;
+export default memo(UserInfoData);

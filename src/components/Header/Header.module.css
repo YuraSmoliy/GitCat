@@ -3,7 +3,7 @@
   float: left;
   display: flex;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: 1.3vw;
   color: white;
 }
 .welcome {
@@ -44,7 +44,7 @@
   display: flex;
 }
 .key {
-  width: 50%;
+  width: 60%;
 }
 .value {
   width: 30%;

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import classes from "./SideMenu.module.css";
 import { UserInfoContext } from "../UserContext/UserContext";
 import { NavLink } from "react-router-dom";
